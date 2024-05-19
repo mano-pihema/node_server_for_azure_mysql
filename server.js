@@ -6,7 +6,7 @@ const cors = require('cors')
 
 const app = express()
 
-app.use(cors())
+app.use(cors({ origin: process.env.CLIENT }))
 
 //create a connection to the database using connection pools- this keeps the connection open and allows people to queue
 const pool = mysql.createPool({
